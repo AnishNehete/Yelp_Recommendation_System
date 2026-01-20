@@ -1,2 +1,46 @@
-# Yelp_Recommendation_System
-Yelp Recommendation system for USC DSCI 553
+# 🍽️ Yelp Recommendation System — PySpark Hybrid Recommender
+
+🚀 Scalable hybrid recommender system for Yelp ⭐ rating prediction, built using **PySpark (RDD-only)** to handle **large-scale, sparse user–item data**.
+
+---
+
+## 🔍 Overview
+Predicts Yelp star ratings for `(user_id, business_id)` pairs by combining multiple recommendation paradigms into a single robust pipeline.
+
+**Core techniques:**
+- 🤝 Item–item collaborative filtering (Pearson correlation + shrinkage)
+- 📉 SGD-based matrix factorization
+- 🌲 XGBoost regression on user/business features
+- 🧊 Bias-based cold-start handling
+- 🔗 Linear ensemble blending
+
+📊 Achieves **~0.98 RMSE** on validation.
+
+---
+
+## 🏗️ Architecture
+- 📐 **Baseline:** Global mean + regularized user/business biases  
+- 🔁 **CF:** Residual item–item CF with top-K similarity pruning  
+- 🧮 **MF:** Latent factor model trained via SGD  
+- 🤖 **ML:** XGBoost for feature-based generalization  
+- 🔗 **Ensemble:** Linear blending with prediction clamping  
+
+---
+
+## 🛠️ Tech Stack
+- 🐍 Python
+- ⚡ PySpark (RDD API)
+- 🌲 XGBoost
+- 📊 NumPy
+
+---
+
+## ▶️ How to Run
+```bash
+spark-submit Stable_Hybrid_Baseline.py <data_folder> <test_file> <output_file>
+```
+📤 Output
+CSV format ->
+user_id,business_id,prediction
+
+⭐ Predictions are clamped to [1.0, 5.0].
