@@ -1,6 +1,7 @@
-# 🍽️ Yelp Recommendation System — PySpark Hybrid Recommender
+🍽️ Yelp Hybrid Recommendation System (CF · MF · XGBoost)
 
-🚀 Scalable hybrid recommender system for Yelp ⭐ rating prediction, built using **PySpark (RDD-only)** to handle **large-scale, sparse user–item data**.
+
+🚀 Scalable hybrid recommender system for Yelp ⭐ rating prediction using PySpark (RDD-only), combining collaborative filtering, matrix factorization, and XGBoost for sparse user–item data.
 
 ---
 
